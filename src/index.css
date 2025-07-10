@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+
+.marquee {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  animation: marqueeScroll 20s linear infinite;
+  will-change: transform;
+}
+
+.skill-box {
+  background-color: #1c1c28;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  min-width: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+:root {
+  /* Base */
+  --bg-color: #ffffff;
+  --text-color: #1e293b;
+  --muted-text: #64748b;
+  --border-color: #e2e8f0;
+  --card-bg: #f9fafb;
+
+  /* Primary Accent (light gradient) */
+  --primary: #7A5AF8;
+  --primary-dark: #6b46c1;
+  --secondary: #A162E8;
+
+  /* Header/Footer */
+  --header-bg: #ffffff;
+  --footer-bg: #f1f5f9;
+
+  /* Button */
+  --btn-bg: linear-gradient(to right, #7A5AF8, #A162E8);
+  --btn-hover: linear-gradient(to right, #6b46c1, #9f6fe0);
+
+  /* Logo Overlay */
+  --logo-overlay: rgba(122, 90, 248, 0.05);
+
+  /* Code/Terminal */
+  --code-bg: #f3f4f6;
+  --code-text: #111827;
+
+  /* Shadows */
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] {
+  --bg-color: #0B0E17;
+  --text-color: #ffffff;
+  --muted-text: #a0aec0;
+  --border-color: #2a2a3b;
+  --card-bg: #1c1c28;
+
+  --primary: #7A5AF8;
+  --primary-dark: #6b46c1;
+  --secondary: #A162E8;
+
+  --header-bg: #0B0E17;
+  --footer-bg: #0B0E17;
+
+  --btn-bg: linear-gradient(to right, #7A5AF8, #A162E8);
+  --btn-hover: linear-gradient(to right, #6b46c1, #9f6fe0);
+
+  --logo-overlay: rgba(122, 90, 248, 0.08);
+
+  --code-bg: #1e1e2f;
+  --code-text: #f8f8f2;
+
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
